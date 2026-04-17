@@ -3,106 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Umur Y. Alper — Geliştirici</title>
+  <title>Umur Y. Alper — Apps & Games</title>
+  <meta name="description" content="Umur Yasin Alper tarafından geliştirilen mobil uygulamalar ve oyunlar.">
+  <meta name="author" content="Umur Yasin Alper">
+  <meta property="og:title" content="Umur Y. Alper — Apps & Games">
+  <meta property="og:url" content="https://umuryasin.github.io">
+  <meta property="og:type" content="website">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
       color: #1a1a1a;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 80px 24px 60px;
+      padding: 72px 20px 56px;
     }
 
-    .header h1 { font-size: 28px; margin-bottom: 8px; }
-    .header p { font-size: 15px; color: #666; }
+    .header {
+      margin-bottom: 44px;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      font-size: 16px;
+      color: #5b6472;
+      line-height: 1.6;
+      max-width: 650px;
+    }
+
+    .section {
+      margin-bottom: 34px;
+    }
 
     .section-label {
-      font-size: 12px;
+      font-size: 13px;
       text-transform: uppercase;
-      color: #999;
-      margin: 32px 0 16px;
+      letter-spacing: 1.6px;
+      color: #7b8190;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .cards {
+      display: grid;
+      gap: 18px;
     }
 
     .app-card {
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
+      border-radius: 22px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.65);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .app-card h3 { font-size: 17px; margin-bottom: 6px; }
-    .app-card p { font-size: 14px; color: #666; }
+    .app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .card-blue {
+      background: linear-gradient(135deg, #e9f2ff 0%, #dcecff 100%);
+      border-color: #cddffd;
+    }
+
+    .card-purple {
+      background: linear-gradient(135deg, #f3e8ff 0%, #ece7ff 100%);
+      border-color: #ddd2fe;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .app-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .app-description {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .badge-blue {
+      background: #12367F;
+      color: #fff;
+    }
+
+    .badge-purple {
+      background: #6d28d9;
+      color: #fff;
+    }
+
+    .app-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      margin-bottom: 18px;
+    }
+
+    .app-tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      color: #374151;
+      border: 1px solid rgba(0,0,0,0.05);
+      font-weight: 500;
+    }
 
     .store-links {
       display: flex;
       gap: 10px;
-      margin-top: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
     }
 
     .store-link {
-      padding: 8px 12px;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 12px;
       text-decoration: none;
-      font-size: 13px;
-      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      color: #111827;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .store-link:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .store-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .card-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .text-link {
+      font-size: 14px;
+      color: #1f2937;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .text-link:hover {
+      opacity: 0.8;
     }
 
     .footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #aaa;
+      margin-top: 42px;
+      font-size: 13px;
+      color: #8c93a3;
+      border-top: 1px solid #dbe3ee;
+      padding-top: 18px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 48px 16px 40px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .store-links,
+      .card-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .store-link {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <div class="header">
-    <h1>Umur Y. Alper</h1>
-    <p>Mobil uygulama ve oyun geliştirici</p>
+    <header class="header">
+      <h1>Umur Y. Alper</h1>
+      <p>
+        Mobil uygulama ve oyun geliştirme alanlarında çalışan bağımsız geliştirici.
+        Burada yayınladığım uygulama ve oyunlara ulaşabilirsiniz.
+      </p>
+    </header>
+
+    <section class="section">
+      <div class="section-label">Games</div>
+
+      <div class="cards">
+        <div class="app-card card-purple">
+          <div class="card-top">
+            <div>
+              <h2 class="app-title">Sand Boom</h2>
+              <p class="app-description">
+                Renkli ve akıcı oynanışa sahip, fizik tabanlı bir sand puzzle oyunu.
+              </p>
+            </div>
+            <span class="badge badge-purple">Game</span>
+          </div>
+
+          <div class="app-tags">
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Puzzle</span>
+            <span class="app-tag">Casual</span>
+          </div>
+
+          <div class="store-links">
+            <a href="#" class="store-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 9.99l-2.3 2.3-8.636-8.632z"/>
+              </svg>
+              Google Play
+            </a>
+          </div>
+
+          <div class="card-links">
+            <a href="https://umuryasin.github.io/sandboom-privacy.html" class="text-link" target="_blank" rel="noopener">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Apps</div>
+
+      <div class="cards">
+        <div class="app-card card-blue">
+          <div class="card-top">
+            <div>
+              <h2 class="app-title">Plaka Kontrol TR</h2>
+              <p class="app-description">
+                Türkiye plakalarını kamera ile taramaya ve görsel özelliklerini incelemeye yardımcı olan mobil uygulama.
+              </p>
+            </div>
+            <span class="badge badge-blue">App</span>
+          </div>
+
+          <div class="app-tags">
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Utility</span>
+          </div>
+
+          <div class="store-links">
+            <a href="https://apps.apple.com/tr/app/plaka-kontrol-tr/id6760622303?l=tr" class="store-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              App Store
+            </a>
+
+            <a href="https://play.google.com/store/apps/details?id=com.plaka.plate_scanner" class="store-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 9.99l-2.3 2.3-8.636-8.632z"/>
+              </svg>
+              Google Play
+            </a>
+          </div>
+
+          <div class="card-links">
+            <a href="https://umuryasin.github.io/PlakaKontrol/" class="text-link" target="_blank" rel="noopener">
+              App Page
+            </a>
+            <a href="https://umuryasin.github.io/PlakaKontrol/privacy.html" class="text-link" target="_blank" rel="noopener">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2026 Umur Y. Alper
+    </footer>
+
   </div>
-
-  <!-- GAMES -->
-  <div class="section-label">Games</div>
-
-  <div class="app-card">
-    <h3>Sand Boom</h3>
-    <p>Physics-based sand puzzle game.</p>
-
-    <div class="store-links">
-      <a href="#" class="store-link">Google Play (yakında)</a>
-    </div>
-  </div>
-
-  <!-- APPS -->
-  <div class="section-label">Apps</div>
-
-  <div class="app-card">
-    <h3>Plaka Kontrol TR</h3>
-    <p>Türk plakalarını analiz eden mobil uygulama.</p>
-
-    <div class="store-links">
-      <a href="https://play.google.com/store/apps/details?id=com.plaka.plate_scanner" class="store-link" target="_blank">
-        Google Play
-      </a>
-    </div>
-  </div>
-
-  <div class="footer">© 2026 Umur Y. Alper</div>
-
-</div>
 
 </body>
 </html>
